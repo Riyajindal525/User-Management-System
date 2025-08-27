@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+</head>
+<body>
+  <h1>The total no. of users are : <%= count %></h1>
+
+  
+  <form method="GET" action="/user">
+    <button>Join us Today!</button>
+  </form>
+
+  <br><br>
+  
+  <form method="POST" action="/user?_method=DELETE">
+  <button>Already have an account? Delete it</button>
+</form>
+
+</body>  
+</html>

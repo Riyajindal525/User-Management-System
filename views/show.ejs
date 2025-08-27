@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Details of Users</title>
+  <style>
+    table { width: 70%; border-collapse: collapse; margin: 20px auto; }
+    th, td { border: 1px solid #555; padding: 10px; text-align: center; }
+    th { background-color: #f4f4f4; }
+    h1 { text-align: center; margin-top: 20px; }
+    input { padding: 5px; }
+    button { padding: 5px 10px; }
+  </style>
+</head>
+<body>
+  <h1>Users Data</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Password</th>
+        
+        <th>Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% users.forEach(user => { %>
+        <tr>
+          <td><%= user.id %></td>
+          <td><%= user.username %></td>
+          <td><%= user.email %></td>
+          <td><%= user.password %></td>
+          
+          <td>
+            <form method="GET" action="/users/<%= user.id %>/edit">
+              <button>Edit</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</body>
+</html>

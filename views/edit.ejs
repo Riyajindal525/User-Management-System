@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit your profile</title>
+</head>
+<body>
+  <h1>Edit Profile</h1>
+  <p>You are about to edit profile of <%= user.email %></p>
+  <p>Current Username : <%= user.username %></p>
+
+  <form action="/users/<%= user.id %>?_method=PATCH" method="POST">
+    <label for="username">New Username:</label><br>
+    <input type="text" id="username" name="username" placeholder="Enter your new username" required><br><br>
+
+    <label for="password">Password:</label><br>
+    <input type="password" name="password" placeholder="Enter your password" required><br><br>
+
+    <button type="submit">Save Changes</button>
+  </form>
+</body>
+</html>
